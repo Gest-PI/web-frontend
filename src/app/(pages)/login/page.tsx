@@ -1,11 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 
 const Login = () => {
     const theme = useSelector((state: any) => state.theme.value);
-
+    const router = useRouter();
     return (
         <div
             className={`flex flex-col ${
@@ -20,7 +21,7 @@ const Login = () => {
                 width={100}
                 height={100}
             />
-            <form
+            <div
                 className={` ${
                     theme == "light" ? "bg-[#0A1E1E] " : "bg-gray-100"
                 } p-8 rounded shadow-md w-80 md:w-96`}
@@ -48,7 +49,7 @@ const Login = () => {
                             theme == "light" ? "text-white" : "text-gray-700"
                         }`}
                     >
-                        Password
+                        Senha
                     </label>
                     <input
                         type="password"
@@ -59,12 +60,13 @@ const Login = () => {
                 </div>
                 <button
                     type="submit"
+                    onClick={() => router.push("/dashboard")}
                     className={`w-full bg-[#1E842D]
-                     text-white py-2 rounded hover:bg-[#0A1E1E] cursor-pointer transition duration-200`}
+                     text-white py-2 rounded hover:bg-[#34C759] cursor-pointer transition duration-200`}
                 >
-                    Login
+                    Entrar
                 </button>
-            </form>
+            </div>
         </div>
     );
 };
