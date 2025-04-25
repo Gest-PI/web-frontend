@@ -1,5 +1,19 @@
+"use client";
+import { useSelector } from "react-redux";
+
 const SideBar = () => {
-    return <div className="bg-purple-400 w-48 h-full">SideBar</div>;
+    const theme = useSelector((state: any) => state.theme.value);
+    return (
+        <div
+            className={` ${
+                theme == "light"
+                    ? "bg-gray-200 text-black"
+                    : "bg-black text-white"
+            }   w-56 h-full flex justify-center`}
+        >
+            SideBar
+        </div>
+    );
 };
 
 export default SideBar;

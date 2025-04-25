@@ -10,7 +10,7 @@ const Login = () => {
     return (
         <div
             className={`flex flex-col ${
-                theme == "dark" ? "bg-[#0A1E1E] " : "bg-gray-100"
+                theme == "dark" ? "bg-[#0A1E1E] " : "bg-gray-200"
             }
              items-center justify-center h-screen w-full`}
         >
@@ -23,7 +23,7 @@ const Login = () => {
             />
             <div
                 className={` ${
-                    theme == "light" ? "bg-[#0A1E1E] " : "bg-gray-100"
+                    theme == "light" ? "bg-[#0A1E1E] " : "bg-gray-200"
                 } p-8 rounded shadow-md w-80 md:w-96`}
             >
                 <div className="mb-4">
