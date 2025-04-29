@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+model User {
+  id            String      @id @default(uuid())
+  name          String
+  email         String      @unique
+  password      String
+  isValidated   Boolean
+  apartment     Apartment?  @relation(fields: [apartmentId], references: [id])
+  apartmentId   String?
+  condominium   Condominium @relation(fields: [condominiumId], references: [id])
+  condominiumId String
+  typeOfResident UserType
+  bookings      Booking[]
+  billets       Billet[]
+}
+
+enum UserType {
+  RESIDENT
+  MANAGER
+  ADMIN
+  RESIDENT_MANAGER
+}
+
+model Condominium {
+  id          String      @id @default(uuid())
+  name        String
+  email       String
+  apartments  Apartment[]
+  users       User[]
+  meters      Meters[]
+}
+
+model Apartment {
+  id          String     @id @default(uuid())
+  number      String
+  block       String?
+  condominium Condominium @relation(fields: [condominiumId], references: [id])
+  condominiumId String
+  meters      Meters[]
+  users       User[]
+}
+
+model Meters {
+  id              String      @id @default(uuid())
+  meterValue      String
+  processingTime  DateTime
+  apartment       Apartment   @relation(fields: [apartmentId], references: [id])
+  apartmentId     String
+  condominium     Condominium @relation(fields: [condominiumId], references: [id])
+  condominiumId   String
+}
+
+model Booking {
+  id          String   @id @default(uuid())
+  bookingDate DateTime
+  isApproved  Boolean
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+}
+
+model Billet {
+  id             String   @id @default(uuid())
+  condominiumFee Float
+  reserveFund    Float
+  waterFee       Float
+  gasFee         Float
+  referenceMonth String
+  owner          User     @relation(fields: [ownerId], references: [id])
+  ownerId        String
+}
+
