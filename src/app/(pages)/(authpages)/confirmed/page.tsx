@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 export default function ConfirmedPage() {
     return (
         <>
-            <div className="w-1/2 bg-[#071717] p-24 flex flex-col items-center">
+            <div className="md:w-1/2 bg-[#071717] p-24 flex flex-col items-center">
                 <h1 className="font-bold text-4xl pb-2 text-[#59cb75]">
                     Parabéns!
                 </h1>
@@ -24,7 +24,7 @@ export default function ConfirmedPage() {
                     voltar
                 </button>
             </div>
-            <div className="w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-center items-center">
+            <div className="md:w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-center items-center">
                 <Image
                     src={"/confirmed.png"}
                     width={300}

@@ -7,30 +7,54 @@ export default function SignupPage() {
     const theme = useSelector((state: any) => state.theme.value);
     return (
         <>
-            <div className="w-1/2 bg-[#071717] flex flex-col justify-center items-center p-10 space-y-6">
+            <div
+                className={`md:w-1/2 bg-[#071717] flex flex-col justify-center items-center p-10 space-y-6 ${
+                    theme == "light"
+                        ? "bg-gray-200 text-black"
+                        : "bg-[#071717] text-white"
+                } `}
+            >
                 <h2 className="text-2xl font-bold w-full text-center">
                     Quer conhecer nossa plataforma? Entraremos em{" "}
-                    <span className="text-[#59cb75]">contato com você!</span>
+                    <span
+                        className={`${
+                            theme == "light"
+                                ? "text-[#189938]"
+                                : "text-[#34C759]"
+                        }`}
+                    >
+                        contato com você!
+                    </span>
                 </h2>
                 <div className="space-y-4">
                     <input
                         type="text"
                         placeholder="Nome"
-                        className="w-full px-4 py-2 rounded bg-white text-[#0A1E1E] outline-none"
+                        className={`w-full px-4 py-2 rounded ${
+                            theme == "light" ? "bg-white" : " bg-[#072727]"
+                        }  outline-none`}
                     />
                     <input
                         type="email"
-                        placeholder="Email"
-                        className="w-full px-4 py-2 rounded bg-white text-[#0A1E1E] outline-none"
+                        placeholder="E-mail"
+                        className={`w-full px-4 py-2 rounded ${
+                            theme == "light" ? "bg-white" : " bg-[#072727]"
+                        }  outline-none`}
                     />
                     <input
                         type="tel"
                         placeholder="Telefone"
-                        className="w-full px-4 py-2 rounded bg-white text-[#0A1E1E] outline-none"
+                        className={`w-full px-4 py-2 rounded ${
+                            theme == "light" ? "bg-white" : " bg-[#072727]"
+                        }  outline-none`}
                     />
                     <button
                         onClick={() => redirect("/confirmed")}
-                        className="w-full py-2 cursor-pointer bg-[#34C759] hover:bg-[#1E842D] rounded text-white"
+                        className={`w-full py-2 cursor-pointer rounded text-white ${
+                            theme == "light"
+                                ? "bg-[#34C759] hover:bg-[#1E842D]"
+                                : "bg-[#1E842D] hover:bg-[#34C759]"
+                        }`}
                     >
                         Entrar em contato
                     </button>
@@ -39,13 +63,21 @@ export default function SignupPage() {
                     Ja tem uma conta?{" "}
                     <button
                         onClick={() => redirect("/login")}
-                        className="text-[#34C759]"
+                        className={`${
+                            theme == "light"
+                                ? "text-[#189938]"
+                                : "text-[#34C759]"
+                        } cursor-pointer`}
                     >
                         Entrar
                     </button>
                 </p>
             </div>
-            <div className="w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-center items-center">
+            <div
+                className={`md:w-1/2 ${
+                    theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
+                } p-10 flex flex-col justify-center items-center`}
+            >
                 <Image
                     src={"/signup.png"}
                     width={300}

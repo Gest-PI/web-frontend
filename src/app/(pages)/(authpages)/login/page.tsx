@@ -10,8 +10,10 @@ export default function LoginPage() {
     return (
         <>
             <div
-                className={`w-1/2 flex justify-center items-center flex-col ${
-                    theme == "light" ? "bg-gray-200" : "bg-[#071717]"
+                className={`md:w-1/2 flex justify-center items-center flex-col ${
+                    theme == "light"
+                        ? "bg-gray-200 text-black"
+                        : "bg-[#071717] text-white"
                 }  p-10 space-y-4`}
             >
                 <Image
@@ -20,11 +22,7 @@ export default function LoginPage() {
                     height={150}
                     alt="logo"
                 />
-                <p
-                    className={`text-sm ${
-                        theme == "light" ? "text-black" : "text-white"
-                    }`}
-                >
+                <p>
                     Por favor, insira os detalhes da{" "}
                     <span
                         className={`${
@@ -41,24 +39,20 @@ export default function LoginPage() {
                         type="email"
                         placeholder="E-mail"
                         className={`w-full px-4 py-2 rounded ${
-                            theme == "light"
-                                ? "bg-white text-black"
-                                : " bg-[#072727] text-white"
+                            theme == "light" ? "bg-white" : " bg-[#072727]"
                         }  outline-none`}
                     />
                     <input
                         type="password"
                         placeholder="Senha"
                         className={`w-full px-4 py-2 rounded  outline-none  ${
-                            theme == "light"
-                                ? "bg-white text-black"
-                                : " bg-[#072727] text-white"
+                            theme == "light" ? "bg-white " : " bg-[#072727]"
                         }`}
                     />
                     <div className="flex justify-between text-sm">
                         <button
                             onClick={() => redirect("/forgotpassword")}
-                            className={`${
+                            className={`cursor-pointer ${
                                 theme == "light"
                                     ? "text-[#189938]"
                                     : "text-[#34C759]"
@@ -100,7 +94,7 @@ export default function LoginPage() {
             <div
                 className={`${
                     theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
-                } w-1/2  text-[#0A1E1E] p-10 flex flex-col justify-between items-center`}
+                } md:w-1/2  text-[#0A1E1E] p-10 flex flex-col justify-between items-center`}
             >
                 <Image
                     src={"/login.png"}

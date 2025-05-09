@@ -14,7 +14,7 @@ export default function ForgotPasswordPage() {
     if (sendEmail) {
         return (
             <>
-                <div className="w-1/2 flex justify-center items-center flex-col bg-[#071717] p-10 space-y-4">
+                <div className="md:w-1/2 flex justify-center items-center flex-col bg-[#071717] p-10 space-y-4">
                     <div className=" space-y-4 w-full">
                         <span className="text-[#59cb75] text-2xl font-bold">
                             Email enviado com sucesso! Verifique sua caixa de
@@ -29,7 +29,7 @@ export default function ForgotPasswordPage() {
                     </div>
                 </div>
 
-                <div className="w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-between items-center">
+                <div className="md:w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-between items-center">
                     <Image
                         src={"/forgotpassword.png"}
                         width={400}
@@ -43,7 +43,7 @@ export default function ForgotPasswordPage() {
 
     return (
         <>
-            <div className="w-1/2 flex items-center  justify-center flex-col bg-[#071717] p-10 space-y-4">
+            <div className="md:w-1/2 flex items-center  justify-center flex-col bg-[#071717] p-10 space-y-4">
                 <h1 className="text-2xl font-bold">Esqueceu sua senha?</h1>
                 <span>
                     <span className="text-[#59cb75]">
@@ -67,7 +67,7 @@ export default function ForgotPasswordPage() {
                 </div>
             </div>
 
-            <div className="w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-between items-center">
+            <div className="md:w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-between items-center">
                 <Image
                     src={"/forgotpassword.png"}
                     width={400}
