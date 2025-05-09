@@ -37,9 +37,12 @@ export default function SignupPage() {
                 </div>
                 <p className="text-sm text-center mt-4">
                     Ja tem uma conta?{" "}
-                    <a href="/login" className="text-[#34C759]">
+                    <button
+                        onClick={() => redirect("/login")}
+                        className="text-[#34C759]"
+                    >
                         Entrar
-                    </a>
+                    </button>
                 </p>
             </div>
             <div className="w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-center items-center">
