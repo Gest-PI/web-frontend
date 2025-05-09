@@ -67,7 +67,11 @@ export default function ForgotPasswordPage() {
                 </div>
             </div>
 
-            <div className="md:w-1/2  bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-between items-center">
+            <div
+                className={`md:w-1/2  ${
+                    theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
+                } text-[#0A1E1E] p-10 flex flex-col justify-between items-center`}
+            >
                 <Image
                     src={"/forgotpassword.png"}
                     width={400}
