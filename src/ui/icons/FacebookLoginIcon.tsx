@@ -8,7 +8,7 @@ export default function FacebookLoginIcon({
     return (
         <button
             onClick={onClick}
-            className="flex items-center cursor-pointer gap-3 px-2 py-2 rounded-lg shadow-sm border border-gray-300 bg-white hover:bg-gray-100 active:scale-95 transition-transform focus:outline-none focus:ring-2 focus:ring-[#34C759]"
+            className="flex items-center cursor-pointer gap-3 px-2 py-2 rounded-lg shadow-sm border border-gray-500 hover:bg-gray-100 active:scale-95 transition-transform focus:outline-none focus:ring-2 focus:ring-[#34C759]"
             aria-label="Sign in with Facebook"
         >
             <svg

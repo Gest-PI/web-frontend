@@ -11,7 +11,7 @@ export default function LoginPage() {
         <>
             <div
                 className={`w-1/2 flex justify-center items-center flex-col ${
-                    theme == "light" ? "bg-gray-300" : "bg-[#071717]"
+                    theme == "light" ? "bg-gray-200" : "bg-[#071717]"
                 }  p-10 space-y-4`}
             >
                 <Image
@@ -26,30 +26,54 @@ export default function LoginPage() {
                     }`}
                 >
                     Por favor, insira os detalhes da{" "}
-                    <span className="text-[#189938]">sua conta</span>
+                    <span
+                        className={`${
+                            theme == "light"
+                                ? "text-[#189938]"
+                                : "text-[#34C759]"
+                        }`}
+                    >
+                        sua conta
+                    </span>
                 </p>
                 <div className="space-y-4 w-full">
                     <input
                         type="email"
                         placeholder="E-mail"
-                        className={`w-full px-4 py-2 rounded bg-white text-[#0A1E1E] outline-none`}
+                        className={`w-full px-4 py-2 rounded ${
+                            theme == "light"
+                                ? "bg-white text-black"
+                                : " bg-[#072727] text-white"
+                        }  outline-none`}
                     />
                     <input
                         type="password"
                         placeholder="Senha"
-                        className="w-full px-4 py-2 rounded bg-white text-[#0A1E1E] outline-none"
+                        className={`w-full px-4 py-2 rounded  outline-none  ${
+                            theme == "light"
+                                ? "bg-white text-black"
+                                : " bg-[#072727] text-white"
+                        }`}
                     />
                     <div className="flex justify-between text-sm">
                         <button
                             onClick={() => redirect("/forgotpassword")}
-                            className="text-[#34C759]"
+                            className={`${
+                                theme == "light"
+                                    ? "text-[#189938]"
+                                    : "text-[#34C759]"
+                            }`}
                         >
                             Esqueceu a senha?
                         </button>
                     </div>
                     <button
                         onClick={() => redirect("/dashboard")}
-                        className="w-full py-2 cursor-pointer bg-[#34C759] hover:bg-[#1E842D] rounded text-white"
+                        className={`w-full py-2 cursor-pointer ${
+                            theme == "light"
+                                ? "bg-[#34C759] hover:bg-[#1E842D]"
+                                : "bg-[#1E842D] hover:bg-[#34C759]"
+                        }  rounded text-white`}
                     >
                         Entrar
                     </button>
@@ -62,14 +86,22 @@ export default function LoginPage() {
                     Não tem uma conta?{" "}
                     <button
                         onClick={() => redirect("/signup")}
-                        className="text-[#34C759] cursor-pointer"
+                        className={`${
+                            theme == "light"
+                                ? "text-[#189938]"
+                                : "text-[#34C759]"
+                        } cursor-pointer`}
                     >
                         Crie uma
                     </button>
                 </p>
             </div>
 
-            <div className="w-1/2 bg-[#59cb75] text-[#0A1E1E] p-10 flex flex-col justify-between items-center">
+            <div
+                className={`${
+                    theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
+                } w-1/2  text-[#0A1E1E] p-10 flex flex-col justify-between items-center`}
+            >
                 <Image
                     src={"/login.png"}
                     width={400}
