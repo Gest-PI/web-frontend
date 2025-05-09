@@ -12,6 +12,7 @@ const UserIconWhiteBg = ({ size = 40 }) => {
                 alignItems: "center",
                 justifyContent: "center",
                 border: "1px solid #ccc",
+                cursor: "pointer",
             }}
         >
             <svg

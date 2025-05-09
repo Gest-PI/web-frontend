@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import Image from "next/image";
 import UserIconBlackBg from "../icons/UserIconBlackBg";
 import UserIconWhiteBg from "../icons/UserIconWhiteBg";
+import LogoutIcon from "../icons/LogoutIcon";
+import { redirect } from "next/navigation";
 
 const Navbar = () => {
     const theme = useSelector((state: any) => state.theme.value);
@@ -18,7 +20,15 @@ const Navbar = () => {
                 width={100}
                 height={100}
             />
-            {theme == "dark" ? <UserIconWhiteBg /> : <UserIconBlackBg />}
+            <div className="flex space-x-6">
+                {theme == "dark" ? <UserIconWhiteBg /> : <UserIconBlackBg />}
+                <LogoutIcon
+                    onClick={() => redirect("/login")}
+                    className={`${
+                        theme == "light" ? "text-black" : "text-white"
+                    } w-6`}
+                />
+            </div>
         </div>
     );
 };

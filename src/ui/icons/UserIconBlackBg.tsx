@@ -11,6 +11,7 @@ const UserIconBlackBg = ({ size = 40 }) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                cursor: "pointer",
             }}
         >
             <svg
