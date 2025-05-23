@@ -20,7 +20,21 @@ const Navbar = () => {
                 width={100}
                 height={100}
             />
-            <div className="flex space-x-6">
+            <div className="flex justify-center items-center space-x-6">
+                <div className="h-full">
+                    <Image
+                        src={
+                            theme == "light"
+                                ? "/lightBell.png"
+                                : "/darkBell.png"
+                        }
+                        alt="Notifications"
+                        width={28}
+                        height={50}
+                        className="cursor-pointer"
+                    />
+                </div>
+
                 {theme == "dark" ? <UserIconWhiteBg /> : <UserIconBlackBg />}
                 <LogoutIcon
                     onClick={() => redirect("/login")}
