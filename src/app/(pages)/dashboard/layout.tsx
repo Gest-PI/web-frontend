@@ -4,6 +4,7 @@ import SideBar from "@/ui/components/SideBar";
 import MainContent from "@/ui/components/MainContent";
 import Wrapper from "@/ui/components/Wrapper";
 import Line from "@/ui/components/Line";
+import { SideBarItems } from "@/ui/components/SideBarItems";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -11,7 +12,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
             <Navbar />
             <Line />
             <ContentWrapper>
-                <SideBar />
+                <SideBar>
+                    <SideBarItems />
+                </SideBar>
                 <MainContent>{children}</MainContent>
             </ContentWrapper>
         </Wrapper>

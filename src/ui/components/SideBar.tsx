@@ -1,7 +1,8 @@
 "use client";
+import { ReactNode } from "react";
 import { useSelector } from "react-redux";
 
-const SideBar = () => {
+const SideBar = ({ children }: { children: ReactNode }) => {
     const theme = useSelector((state: any) => state.theme.value);
     return (
         <div
@@ -11,7 +12,7 @@ const SideBar = () => {
                     : "bg-black text-white"
             }   w-56 h-full flex justify-center`}
         >
-            SideBar
+            {children}
         </div>
     );
 };
