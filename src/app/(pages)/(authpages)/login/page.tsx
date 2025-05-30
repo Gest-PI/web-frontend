@@ -10,7 +10,7 @@ export default function LoginPage() {
     return (
         <>
             <div
-                className={`md:w-1/2 flex justify-center items-center flex-col ${
+                className={`w-full md:w-1/2 flex justify-center items-center p-10 flex-col ${
                     theme == "light"
                         ? "bg-gray-200 text-black"
                         : "bg-[#071717] text-white"
@@ -92,9 +92,9 @@ export default function LoginPage() {
             </div>
 
             <div
-                className={`${
+                className={`hidden md:flex ${
                     theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
-                } md:w-1/2  text-[#0A1E1E] p-10 flex flex-col justify-between items-center`}
+                } md:w-1/2  text-[#0A1E1E] p-10  flex-col justify-between items-center `}
             >
                 <Image
                     src={"/login.png"}

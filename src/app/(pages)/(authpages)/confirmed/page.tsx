@@ -8,7 +8,7 @@ export default function ConfirmedPage() {
     return (
         <>
             <div
-                className={`md:w-1/2 bg-[#071717] p-24 flex flex-col items-center ${
+                className={`md:w-1/2 bg-[#071717] flex flex-col justify-center p-10 items-center ${
                     theme == "light"
                         ? "bg-gray-200 text-black"
                         : "bg-[#071717] text-white"
@@ -21,9 +21,8 @@ export default function ConfirmedPage() {
                 >
                     Parabéns!
                 </h1>
-                <span className="text-xl">Fique atento ao telefone!</span>
                 <span className="text-xl">
-                    Logo{" "}
+                    Fique atento ao telefone! <br /> Logo{" "}
                     <span
                         className={`${
                             theme == "light"
@@ -47,9 +46,9 @@ export default function ConfirmedPage() {
                 </button>
             </div>
             <div
-                className={`md:w-1/2 ${
+                className={`md:w-1/2 hidden md:flex ${
                     theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
-                } text-[#0A1E1E] p-10 flex flex-col justify-center items-center`}
+                } text-[#0A1E1E] p-10 flex-col justify-center items-center`}
             >
                 <Image
                     src={"/confirmed.png"}

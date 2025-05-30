@@ -8,7 +8,7 @@ export default function SignupPage() {
     return (
         <>
             <div
-                className={`md:w-1/2 bg-[#071717] flex flex-col justify-center items-center p-10 space-y-6 ${
+                className={`md:w-1/2 bg-[#071717] flex flex-col justify-center p-10 items-center space-y-6 ${
                     theme == "light"
                         ? "bg-gray-200 text-black"
                         : "bg-[#071717] text-white"
@@ -74,9 +74,9 @@ export default function SignupPage() {
                 </p>
             </div>
             <div
-                className={`md:w-1/2 ${
+                className={`md:w-1/2 hidden md:flex ${
                     theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
-                } p-10 flex flex-col justify-center items-center`}
+                } p-10 flex-col justify-center items-center `}
             >
                 <Image
                     src={"/signup.png"}

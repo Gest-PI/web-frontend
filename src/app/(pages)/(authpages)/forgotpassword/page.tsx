@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { useState } from "react";
+import LeftArrowIcon from "@/ui/icons/LeftArrowIcon";
 
 export default function ForgotPasswordPage() {
     const theme = useSelector((state: any) => state.theme.value);
@@ -15,7 +16,7 @@ export default function ForgotPasswordPage() {
         return (
             <>
                 <div
-                    className={`md:w-1/2 flex justify-center items-center flex-col p-10 space-y-4  ${
+                    className={`md:w-1/2 flex justify-center items-center p-10 flex-col space-y-4  ${
                         theme == "light"
                             ? "bg-gray-200 text-black"
                             : "bg-[#071717] text-white"
@@ -46,9 +47,9 @@ export default function ForgotPasswordPage() {
                 </div>
 
                 <div
-                    className={`md:w-1/2 ${
+                    className={`hidden md:flex md:w-1/2 ${
                         theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
-                    } text-[#0A1E1E] p-10 flex flex-col justify-between items-center`}
+                    } text-[#0A1E1E] p-10 flex-col justify-between items-center`}
                 >
                     <Image
                         src={"/forgotpassword.png"}
@@ -64,13 +65,18 @@ export default function ForgotPasswordPage() {
     return (
         <>
             <div
-                className={`md:w-1/2 flex items-center  justify-center flex-col  ${
+                className={`md:w-1/2 flex items-center justify-center p-10 flex-col  ${
                     theme == "light"
                         ? "bg-gray-200 text-black"
                         : "bg-[#071717] text-white"
                 } p-10 space-y-4`}
             >
-                <h1 className="text-2xl font-bold">Esqueceu sua senha?</h1>
+                <div className="w-full flex items-center justify-start">
+                    <LeftArrowIcon theme={theme} href={"/login"} />
+                </div>
+                <h1 className="text-2xl font-bold w-full flex items-center justify-center gap-2">
+                    Esqueceu sua senha?
+                </h1>
                 <span>
                     <span
                         className={`${
@@ -106,7 +112,7 @@ export default function ForgotPasswordPage() {
             </div>
 
             <div
-                className={`md:w-1/2  ${
+                className={`md:w-1/2 hidden md:flex  ${
                     theme == "light" ? "bg-[#59cb75]" : "bg-[#1E842D]"
                 } text-[#0A1E1E] p-10 flex flex-col justify-between items-center`}
             >
