@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/redux/ReduxProvider";
 import FloatButton from "@/ui/components/FloatButton";
+import ThemeHydrator from "@/redux/theme/ThemeHydratator";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <ReduxProvider>
+                    <ThemeHydrator />
                     {children}
                     <FloatButton />
                 </ReduxProvider>
