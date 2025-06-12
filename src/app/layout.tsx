@@ -4,6 +4,7 @@ import "./globals.css";
 import ReduxProvider from "@/redux/ReduxProvider";
 import FloatButton from "@/ui/components/FloatButton";
 import ThemeHydrator from "@/redux/theme/ThemeHydratator";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -34,6 +35,7 @@ export default function RootLayout({
                     <ThemeHydrator />
                     {children}
                     <FloatButton />
+                    <ToastContainer />
                 </ReduxProvider>
             </body>
         </html>

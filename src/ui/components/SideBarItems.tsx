@@ -38,15 +38,7 @@ export const SideBarItems = () => {
             image: "/darkResidents.png",
             alt: "Residents",
         },
-        {
-            label: "Relatórios",
-            link: "/dashboard/reports",
-            image: "/darkReports.png",
-            alt: "Reports",
-        },
     ];
-
-    console.log("pathname", pathname);
 
     return (
         <div className="h-full w-full">

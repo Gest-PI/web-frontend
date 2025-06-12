@@ -29,7 +29,7 @@ export default function SignupPage() {
                 <div className="space-y-4">
                     <input
                         type="text"
-                        placeholder="Nome"
+                        placeholder="Nome de usuário"
                         className={`w-full px-4 py-2 rounded ${
                             theme == "light" ? "bg-white" : " bg-[#072727]"
                         }  outline-none`}
