@@ -121,7 +121,7 @@ export default function Condominios() {
     }
 
     return (
-        <div className="min-h-screen w-full bg-gray-900 text-white p-6 font-sans max-w-7xl mx-auto">
+        <div className="min-h-screen w-full bg-gray-900 text-white p-6 font-sans mx-auto">
             <h1 className="text-3xl font-bold mb-8 text-center select-none">
                 Condomínios
             </h1>
