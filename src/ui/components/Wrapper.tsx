@@ -5,7 +5,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
     const theme = useSelector((state: any) => state.theme.value);
     return (
         <div
-            className={`flex flex-col items-center justify-center h-screen ${
+            className={`flex flex-col items-center justify-center ${
                 theme ? "bg-[#0A1E1E]" : "bg-gray-100"
             } bg-gray-100`}
         >

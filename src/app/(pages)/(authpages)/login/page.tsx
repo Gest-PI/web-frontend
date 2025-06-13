@@ -68,7 +68,9 @@ export default function LoginPage() {
                         className={`w-full px-4 py-2 rounded ${
                             theme == "light" ? "bg-white" : " bg-[#072727]"
                         } ${
-                            data.error != null ? "border-red-400 border-2" : ""
+                            data.error != null
+                                ? "border-red-400 border-2 placeholder:text-red-400 text-red-400"
+                                : ""
                         }  outline-none`}
                         value={data.username}
                         onChange={(e) =>
@@ -85,7 +87,9 @@ export default function LoginPage() {
                         className={`w-full px-4 py-2 rounded  outline-none  ${
                             theme == "light" ? "bg-white " : " bg-[#072727]"
                         } ${
-                            data.error != null ? "border-red-400 border-2" : ""
+                            data.error != null
+                                ? "border-red-400 border-2 placeholder:text-red-400 text-red-400"
+                                : ""
                         }`}
                         value={data.password}
                         onChange={(e) =>
